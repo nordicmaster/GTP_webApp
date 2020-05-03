@@ -1,0 +1,107 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>GTP CRUD</title>
+    <style>
+        input[type='submit'], button, [aria-label] {
+            cursor: pointer;
+        }
+
+        #spoiler {
+            display: none;
+        }
+
+        table {
+            font-family: Arial, sans-serif;
+            border: 1px solid;
+            border-collapse: collapse;
+        }
+
+        th {
+            background-color: #0066CC;
+            color: white;
+        }
+
+        td {
+            border: 1px solid;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>GTP CRUD</h1>
+    <h3>Add GTP (ID)</h3>
+    <form action="javascript:void(0);" method="POST" onsubmit="addItem()">
+        <input type="text" id="add-name" placeholder="New GTP">
+        <input type="submit" value="Add">
+    </form>
+
+    <div id="spoiler">
+        <h3>Edit</h3>
+        <form class="my-form">
+            <div>ID:</div><input type="text" id="edit-id">
+            <div>Name:</div><input type="text" id="edit-name">
+            <div>Created:</div><input type="text" id="edit-created">
+            <div>Modified:</div><input type="text" id="edit-modified">
+            <div>Version:</div><input type="text" id="edit-version">
+            <div>Instruments count:</div><input type="text" id="edit-instr">
+            <div>Tracks count:</div><input type="text" id="edit-tracks">
+            <div>Tacts:</div><input type="text" id="edit-tacts">
+            <div>Tempo:</div><input type="text" id="edit-tempo">
+            <div>Tonality:</div><input type="text" id="edit-tonality">
+            <div>Signature:</div><input type="text" id="edit-signature">
+            <div>Finished:</div><input type="checkbox" id="edit-finished">
+            <div>With text:</div><input type="checkbox" id="edit-lyric">
+            <div>Recorded:</div><input type="checkbox" id="edit-recorded">
+            <div></div><input type="submit" value="Save">
+            <a onclick="closeInput()" aria-label="Close">&#10006;</a>
+        </form>
+    </div>
+
+    <p id="counter"></p>
+
+    Sort by:
+    <select id="sortsel" onchange="sort_em(this.value)">
+        <option value="ID">ID</option>
+        <option value="name">name</option>
+        <option value="created_date">created_date</option>
+        <option value="version">version</option>
+        <option value="instruments_count">instruments_count</option>
+        <option value="track_count">track_count</option>
+        <option value="tacts">tacts</option>
+        <option value="tempo">tempo</option>
+        <option value="tonality">tonality</option>
+        <option value="signature">signature</option>
+        <option value="finished">GTP finished</option>
+        <option value="lyric_finished">text finished</option>
+        <option value="recorded">recorded</option>
+    </select>
+
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Created</th>
+            <th>Modified</th>
+            <th>Version</th>
+            <th>Instr</th>
+            <th>Tracks</th>
+            <th>Tacts</th>
+            <th>Tempo</th>
+            <th>Tonality</th>
+            <th>Signature</th>
+            <th>Length</th>
+            <th>Finished</th>
+            <th>Lyric</th>
+            <th>Recorded</th>
+        </tr>
+        <tbody id="todos"></tbody>
+    </table>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
+    <script src="site.js"></script>
+</body>
+</html>
