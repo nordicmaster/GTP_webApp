@@ -42,7 +42,7 @@ function getData() {
                     .append($("<td></td>").text(item.tacts))
                     .append($("<td></td>").text(item.tempo))
                     .append($("<td></td>").text(item.tonality))
-                    .append($("<td></td>").html(item.signature.includes("triplets") ? item.signature[0] +'<br><div style="background-color: yellow;">333<div>' : item.signature))
+                    .append($("<td></td>").html(item.signature.includes("triplets") ? item.signature[0] +'<br><div style="background-color: yellow;">triplets<div>' : item.signature))
                     .append($("<td></td>").text(item.length))
                     .append(
                         $("<td></td>").append(
