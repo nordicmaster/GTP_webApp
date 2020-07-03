@@ -1,0 +1,34 @@
+﻿$base-color: #f7f7fa;
+$base-color2: #85d8e3;
+$article-font-size: 13px;
+$font: Verdana;
+
+input[type='submit'], button, [aria-label] {
+    cursor: pointer;
+}
+
+#spoiler {
+    display: none;
+}
+
+table {
+    font-family: Arial, sans-serif;
+    border: 1px solid;
+    border-collapse: collapse;
+    background-color: $base-color2;
+}
+
+th {
+    background-color: #7c90dc;
+    color: $base-color;
+    font-family: $font;
+}
+
+td {
+    border: 1px solid;
+    padding: 5px;
+}
+
+td div {
+    font-style: italic;
+}
