@@ -142,8 +142,7 @@ function sort_em(param) {
     alert(param);
 }
 
-async function apii() {
-    
+async function apii() {    
     //makeCorsRequest();
     //const response = await 
     fetch('https://cors-anywhere.herokuapp.com/https://gturnquist-quoters.cfapps.io/api/random')
